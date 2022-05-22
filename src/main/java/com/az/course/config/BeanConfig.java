@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class BeanConfig {
+    // elave eledim
     @Bean
     public ObjectMapper objectMapper(){
         return new ObjectMapper();
