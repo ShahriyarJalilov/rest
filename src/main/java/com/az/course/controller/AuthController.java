@@ -52,12 +52,13 @@ public class AuthController {
 
     public  TokenResponse refreshToken(@RequestHeader ("Authorization") String token){
         TokenResponse response = new TokenResponse(
-                SUCCESS_MESSAGE.getCode(),
+                200,
                 SUCCESS_MESSAGE.getMessage()
         );
         response.setToken(jwtToken.refreshToken(token));
         return response;
     }
+
 
 
 }
