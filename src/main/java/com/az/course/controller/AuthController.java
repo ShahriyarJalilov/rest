@@ -37,6 +37,7 @@ public class AuthController {
                 request.getPassword()
         );
         try {
+
             authenticationManager.authenticate(authenticationToken);
         } catch (BadCredentialsException ex) {
             throw new BadCredentialsException();
@@ -48,9 +49,10 @@ public class AuthController {
 
     @PostMapping("/refreshToken")
     @ResponseBody
+
     public  TokenResponse refreshToken(@RequestHeader ("Authorization") String token){
         TokenResponse response = new TokenResponse(
-                SUCCESS_MESSAGE.getCode(),
+                200,
                 SUCCESS_MESSAGE.getMessage()
         );
         response.setToken(jwtToken.refreshToken(token));
