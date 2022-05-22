@@ -25,7 +25,7 @@ public class AuthController {
     private final EmployeeService employeeService;
     private final JwtToken jwtToken;
     private final AuthenticationManager authenticationManager;
-    //master change
+    //v2
     @PostMapping("/token")
     public TokenResponse tokenResponse(@RequestBody TokenRequest request) {
         TokenResponse response = new TokenResponse(
@@ -52,7 +52,7 @@ public class AuthController {
 
     public  TokenResponse refreshToken(@RequestHeader ("Authorization") String token){
         TokenResponse response = new TokenResponse(
-                200,
+                SUCCESS_MESSAGE.getCode(),
                 SUCCESS_MESSAGE.getMessage()
         );
         response.setToken(jwtToken.refreshToken(token));
