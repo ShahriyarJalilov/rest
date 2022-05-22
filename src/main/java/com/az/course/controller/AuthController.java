@@ -25,7 +25,7 @@ public class AuthController {
     private final EmployeeService employeeService;
     private final JwtToken jwtToken;
     private final AuthenticationManager authenticationManager;
-    //v2
+    //v2.1
     @PostMapping("/token")
     public TokenResponse tokenResponse(@RequestBody TokenRequest request) {
         TokenResponse response = new TokenResponse(
