@@ -26,6 +26,7 @@ public class AuthController {
     private final JwtToken jwtToken;
     private final AuthenticationManager authenticationManager;
     //nese
+    //master change
     @PostMapping("/token")
     public TokenResponse tokenResponse(@RequestBody TokenRequest request) {
         TokenResponse response = new TokenResponse(
